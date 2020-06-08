@@ -6,11 +6,12 @@ import './index.scss'
 interface IGrid {
     cellSize: number
     baseColor: number
-    isRandomMargin: boolean
+    isRandomMargin?: boolean
+    isDynamic?: boolean
     cellMargin: number
 }
 
-const Grid = ({ cellSize, baseColor, isRandomMargin, cellMargin }: IGrid) => {
+const Grid = ({ cellSize, baseColor, isRandomMargin, isDynamic, cellMargin }: IGrid) => {
     const [nbCells, setNbCells] = useState(0);
 
     const getNbCells = () => {
@@ -39,6 +40,7 @@ const Grid = ({ cellSize, baseColor, isRandomMargin, cellMargin }: IGrid) => {
                 baseColor={baseColor}
                 margin={cellMargin}
                 isRandomMargin={isRandomMargin}
+                isDynamic={isDynamic}
                 key={`cell-${index}`}
             />)}
         </div>
