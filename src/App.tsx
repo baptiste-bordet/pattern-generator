@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route
-} from "react-router-dom";
-
 import Grid from "./Components/Grid";
-
 
 const MAX_CELL_SIZE = 150;
 const MIN_CELL_SIZE = 30;
@@ -29,19 +22,13 @@ const App = () => {
     const getBaseColor = () => Math.trunc(Math.random() * 6) * COLOR_RANGE;
 
     return (
-        <Router>
-            <Switch>
-                <Route path="/">
-                    <Grid
-                        cellSize={getCellSize()}
-                        baseColor={getBaseColor()}
-                        isRandomMargin={IS_RANDOM_MARGIN}
-                        isDynamic={IS_DYNAMIC}
-                        cellMargin={CELL_MARGIN}
-                    />
-                </Route>
-            </Switch>
-        </Router>
+        <Grid
+            cellSize={getCellSize()}
+            baseColor={getBaseColor()}
+            isRandomMargin={IS_RANDOM_MARGIN}
+            isDynamic={IS_DYNAMIC}
+            cellMargin={CELL_MARGIN}
+        />
     );
 }
 
